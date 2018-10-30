@@ -84,6 +84,11 @@ require get_template_directory() . '/inc/custom-post-type.php';
 // shortcodes
 require get_template_directory() . '/inc/shortcodes.php';
 
+/**
+ * Load packaged plugins file
+ */
+require get_template_directory() . '/inc/plugin-include.php';
+
 //Page Slug Body Class
 function add_slug_body_class( $classes ) {
 global $post;
