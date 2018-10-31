@@ -8,6 +8,7 @@
  */
 
 $container = get_theme_mod( 'understrap_container_type' );
+$logo = get_field( 'logo', 'option' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -31,32 +32,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+		<nav class="navbar navbar-expand-md header">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container" >
 		<?php endif; ?>
 
-					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
-
-						<?php if ( is_front_page() && is_home() ) : ?>
-
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-
-						<?php endif; ?>
-
-
-					<?php } else {
-						the_custom_logo();
-					} ?><!-- end custom logo -->
+					<?php logo() ?>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-					<span class="navbar-toggler-icon"></span>
+					<i class="fa fa-bars navbar-toggle-on"></i>
 				</button>
 
 				<!-- The WordPress Menu goes here -->
@@ -64,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					array(
 						'theme_location'  => 'primary',
 						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
+						'container_id'    => 'navbarNavPrimary',
 						'menu_class'      => 'navbar-nav ml-auto',
 						'fallback_cb'     => '',
 						'menu_id'         => 'main-menu',
@@ -77,5 +62,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php endif; ?>
 
 		</nav><!-- .site-navigation -->
-
+				<?php wp_nav_menu(
+					array(
+						'theme_location'  => 'mobile-nav',
+						'container_class' => 'collapse navbar-collapse',
+						'container_id'    => 'navbarNavDropdown',
+						'menu_class'      => 'navbar-nav ml-auto',
+						'fallback_cb'     => '',
+						'menu_id'         => 'mobile-nav',
+						'depth'           => 2,
+						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+					)
+				); ?>
 	</div><!-- #wrapper-navbar end -->

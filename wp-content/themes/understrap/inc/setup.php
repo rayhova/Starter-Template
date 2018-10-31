@@ -46,6 +46,21 @@ if ( ! function_exists ( 'understrap_setup' ) ) {
 			'primary' => __( 'Primary Menu', 'understrap' ),
 		) );
 
+		function register_footer_menu() {
+		  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+		}
+		add_action( 'init', 'register_footer_menu' );
+
+		function register_top_menu() {
+		  register_nav_menu('top-menu',__( 'Top Menu' ));
+		}
+		add_action( 'init', 'register_top_menu' );
+
+		function register_mobile_menu() {
+		  register_nav_menu('mobile-menu',__( 'Mobile Menu' ));
+		}
+		add_action( 'init', 'register_mobile_menu' );
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
