@@ -1,7 +1,5 @@
 <?php $logo = get_field( 'logo', 'option' ); ?>
-
 <?php
-
 function logo() {
 	$logo = get_field( 'logo', 'option' );
 	if(!$logo):

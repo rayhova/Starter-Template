@@ -64,12 +64,12 @@ $logo = get_field( 'logo', 'option' );
 		</nav><!-- .site-navigation -->
 				<?php wp_nav_menu(
 					array(
-						'theme_location'  => 'mobile-nav',
+						'theme_location'  => 'mobile-menu',
 						'container_class' => 'collapse navbar-collapse',
 						'container_id'    => 'navbarNavDropdown',
 						'menu_class'      => 'navbar-nav ml-auto',
 						'fallback_cb'     => '',
-						'menu_id'         => 'mobile-nav',
+						'menu_id'         => 'mobile-menu',
 						'depth'           => 2,
 						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 					)
