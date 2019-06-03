@@ -14,7 +14,7 @@
 				
 					img{
 						object-fit: cover;
-					    object-position: top;
+					    object-position: center;
 					    height: 100%;
 					}
 				}
@@ -24,7 +24,7 @@
 }
 
 section.hero{
-	height: 350px;
+	height: 75vh;
 	padding: 0;
 		div#hero-slide {
 	    height: 100%;
@@ -36,10 +36,127 @@ section.hero{
 				
 					img{
 						object-fit: cover;
-					    object-position: top;
+					    object-position: center;
 					    height: 100%;
+					}
+					.carousel-caption {
+					    // position: absolute;
+					    // margin: auto;
+					    text-align: center;
+					    // top: 50%;
+					    z-index: 10;
+					    padding-top: 20px;
+					    padding-bottom: 20px;
+					    color: #fff;
+					    text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+					    width: 41%;
+					    @include absolutecenter();
+						h1{
+							font-size: 3.5rem;
+	    					font-weight: bold;
+	    					line-height: 1.11;
+						}
+						p{
+					    font-size: 1.25rem;
+    					line-height: 1.4;
+						}
+					    .cta-btn {
+						    text-align: center;
+						    width: 190px;
+						    height: 65px;
+						    padding: 10px;
+						    display: block;
+						    // margin: auto;
+						    background: $primary;
+						    cursor: pointer;
+						    margin: auto;
+						    // border: 5px solid $orange;
+						    &:hover{
+						    	background: $secondary;
+						    	// border: 5px solid $secondary;
+						    	transition-delay: .1s;
+						    }
+							a.cta-link{
+							position: absolute;
+						    top: 50%;
+						    left: initial;
+						    transform: translate(-50%,-50%);
+							    width: 180px;
+							    /* display: block; */
+							    line-height: 1.25rem;
+							    font-weight: bold;
+							    text-shadow: none;
+							    text-transform: uppercase;
+							    color: #fff;
+							 &:hover{
+								text-decoration: none;
+							 }
+							}
+						}
 					}
 				}
 			}
 		}
+	}
+
+	@media only screen and (max-width: 37.5rem){
+		.home{
+		section.hero{
+		
+			div#hero-slide {
+		    
+			
+				.carousel-inner {
+				
+					.carousel-item{
+						
+					
+						img{
+							
+						    // object-position: left;
+						    
+						}
+						.carousel-caption {
+							width: 90%;
+							text-align: center;
+							// left: 5%;
+							h1{
+								font-size: 3rem;
+    							font-weight: 700;
+    							line-height: 2.5rem;
+							}
+						}
+					}
+				}
+			}
+		}
+}
+		section.hero {
+			div#hero-slide {
+				.carousel-inner {
+					.carousel-item {
+						// img{
+						// 	object-position: left;
+						// }
+						.carousel-caption{
+							width: 90%;
+							text-align: center;
+							// left: 5%;
+							h1{
+							    font-weight: 700;
+							    line-height: 1.7rem;
+							    word-break: break-word;
+							    font-size: 1.75rem;
+							}
+						
+							p {
+								font-size: 1rem;
+								line-height: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+
 	}

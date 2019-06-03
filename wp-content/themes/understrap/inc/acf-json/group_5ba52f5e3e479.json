@@ -29,7 +29,12 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "56"
+                "value": "670"
+            },
+            {
+                "param": "current_user",
+                "operator": "!=",
+                "value": "logged_in"
             }
         ]
     ],
@@ -41,5 +46,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537552263
+    "modified": 1554742479
 }

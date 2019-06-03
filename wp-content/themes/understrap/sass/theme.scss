@@ -8,8 +8,8 @@
 @import "assets/underscores"; // <------- Underscores media styles
 
 // Any additional imported files //
-@import "theme/mixins"; // Mixins
-@import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
+@import "theme/contact-form7";
+@import "theme/mixins"; // Contact Form 7 - Bootstrap 4 support
 @import "theme/theme";  // <--------- That's where you can add your own design. Thats your part!
 @import "theme/components/hero";
 @import "theme/components/accordion";

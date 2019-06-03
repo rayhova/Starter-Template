@@ -1,22 +1,29 @@
 <?php if ( !have_rows( 'cta' ) ):
 $cta_text = get_field( 'cta_text' );
 $cta_link = get_field( 'page_link' );
+$outside_url = get_field( 'outside_url' );
 if(!$cta_text){
 	$cta_text = get_sub_field( 'cta_text' );
 	$cta_link = get_sub_field( 'page_link' );
+	$outside_url = get_sub_field( 'outside_url' );
 } ?>
-<a href="<?php echo $cta_link ?>" class="cta-button"><?php echo $cta_text ?></a>
+<a href="<?php if(!$outside_url): echo $cta_link; else: echo $outside_url; endif;?>" class="cta-button"><?php echo $cta_text ?></a>
 
 
 
 <?php elseif ( have_rows( 'cta' ) ) : ?>
+	<div class="row">
 	<?php while ( have_rows( 'cta' ) ) : the_row(); ?>
+		<div class="col">
 		<?php $cta_text = get_sub_field( 'cta_text' );
-		if($cta_text): ?> 
-			<a href="<?php the_sub_field( 'page_link' ); ?>" class="cta-button"><?php echo $cta_text ?></a>
+		if($cta_text): ?>
+			<div class="cta-btn"> 
+			<a href="<?php the_sub_field( 'page_link' ); ?>" class="cta-link"><?php echo $cta_text ?></a>
+			</div>
 		<?php endif; ?>
-		
+		</div>
 	<?php 
 
-	endwhile;
- endif; ?>
+	endwhile; ?>
+ 	</div><!-- row -->
+ <?php endif; ?>

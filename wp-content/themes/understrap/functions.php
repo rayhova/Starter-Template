@@ -89,7 +89,9 @@ require get_template_directory() . '/inc/shortcodes.php';
  */
 require get_template_directory() . '/inc/plugin-include.php';
 
+if (class_exists('ACF')) {
 require get_template_directory()  . '/inc/acf-global.php';
+}
 
 //Page Slug Body Class
 function add_slug_body_class( $classes ) {

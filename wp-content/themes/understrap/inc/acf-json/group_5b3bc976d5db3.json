@@ -22,6 +22,25 @@
             "button_label": "Add Quote",
             "sub_fields": [
                 {
+                    "key": "field_5c3c000ae12cf",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5b3bcb28cfdf7",
                     "label": "Quote",
                     "name": "quote",
@@ -58,6 +77,25 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5c3c01b6e72a3",
+                    "label": "Author Title",
+                    "name": "author_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -67,6 +105,11 @@
             {
                 "param": "current_user",
                 "operator": "!=",
+                "value": "logged_in"
+            },
+            {
+                "param": "current_user",
+                "operator": "==",
                 "value": "logged_in"
             }
         ]
@@ -79,5 +122,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537552231
+    "modified": 1554743279
 }

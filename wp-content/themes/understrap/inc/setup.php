@@ -60,6 +60,10 @@ if ( ! function_exists ( 'understrap_setup' ) ) {
 		  register_nav_menu('mobile-menu',__( 'Mobile Menu' ));
 		}
 		add_action( 'init', 'register_mobile_menu' );
+		function register_mobile_nav() {
+		    register_nav_menu('mobile-nav',__( 'Mobile Nav' ));
+		}
+		add_action( 'init', 'register_mobile_nav' );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments

@@ -117,7 +117,7 @@
                     "key": "field_5b1ea7cdf9e1a",
                     "label": "CTA",
                     "name": "cta",
-                    "type": "group",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -126,7 +126,11 @@
                         "class": "",
                         "id": ""
                     },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
                     "layout": "row",
+                    "button_label": "Add CTA",
                     "sub_fields": [
                         {
                             "key": "field_5b1ea7e1f9e1b",
@@ -341,6 +345,25 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_5cbb3a235dad2",
+            "label": "Random Order",
+            "name": "random",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Randomize Slides Order",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -355,35 +378,35 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-career-nursing.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "internal-page-template.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "default"
             }
         ],
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "resources-template.php"
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "trips"
             }
         ],
         [
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "about-us-template.php"
+                "value": "blog-template.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "trips-template.php"
             }
         ]
     ],
@@ -392,8 +415,10 @@
     "style": "acftc-group-0",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1533849088
+    "modified": 1558022365
 }

@@ -2,7 +2,7 @@
 
 <?php if($hero_type == "image"): ?>
 	<?php if ( have_rows( 'slider' ) ) : ?>
-
+			
 		<section class="hero">
 			<div id="hero-slide" class="carousel slide" data-ride="">
 				<div class="carousel-inner">
@@ -14,26 +14,47 @@
 					<?php while ( have_rows( 'slider' ) ) : the_row();?>
 					<?php $image = get_sub_field( 'image' ); ?>
 					<?php $row_number = get_row_index(); ?>
-						<div class="carousel-item <?php if ($row_number == $rand) {
-	                ?> active <?php }?> slide-<?php echo $row_number; ?>">
+						<div class="carousel-item <?php if ( !$count ) { echo ' active'; } ?> slide-<?php echo $row_number; ?>">
 						 	<img class="d-block w-100" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-						 	<div class="carousel-caption">
-							    <h1><?php the_sub_field( 'headline' ); ?></h1>
-							    <p><?php the_sub_field( 'subheadline' ); ?></p>
-							    <?php require __DIR__ . '/cta.php'; ?>
+							 <div class="container">
+							 	<div class="carousel-caption">
+							 		<!-- <?php $author = get_field( 'author' ); 
+							 		if (!$author){ $author = 'American Nurses Association';}?> -->
+							 		<?php if(is_single()){ ?>
+									<h1><?php the_title(); ?></h1>
+							 			<?php } else{ ?>
+								    <h1><?php the_sub_field( 'headline' ); ?></h1>
+								    <?php } ?>
+								   <?php if($post_type == 'trips'){ ?> 
+								    	<p><?php the_field( 'open_date' ); ?> - <?php the_field( 'close_date' ); ?></p>
+									<?php } else{ ?> 
+								     	<p><?php the_sub_field( 'subheadline' ); ?></p>
+								    <?php } ?> 
+								    
+								    <?php require __DIR__ . '/cta.php'; ?>
+							 	</div>
 						 	</div>
 						</div>
+					<?php $count++; ?>
 					<?php 
 					
 					endwhile; ?>
 				</div><!-- carousel-inner -->
+				<a class="carousel-control-prev" href="#hero-slide" role="button" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#hero-slide" role="button" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
 			</div> 
 		</section>
-		<!-- <script type="text/javascript">
+		<script type="text/javascript">
 		jQuery(function($){
 			$('.carousel').carousel();
 			});
-		</script> -->
+		</script>
 	<?php else : ?>
 		<?php // no rows found ?>
 	<?php endif; ?>

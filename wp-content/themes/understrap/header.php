@@ -75,3 +75,4 @@ $logo = get_field( 'logo', 'option' );
 					)
 				); ?>
 	</div><!-- #wrapper-navbar end -->
+<div id="sttBtn"><i class="fa fa-chevron-up"></i><br /> Top</div>

@@ -13,7 +13,7 @@
 	    <div class="card-header" id="heading-<?php echo get_row_index(); ?>-<?php echo $i ?>">
 	      <h5 class="mb-0">
 	        <button id="btn-<?php echo get_row_index(); ?>-<?php echo $i ?>" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-<?php echo get_row_index(); ?>-<?php echo $i ?>" aria-expanded="false" aria-controls="collapse-<?php echo get_row_index(); ?>-<?php echo $i ?>">
-	          <?php the_sub_field( 'title' ); ?> 
+	          <?php the_sub_field( 'title' ); ?> <i class="fa fa-plus"></i></i>
 	        </button>
 	      </h5>
 	    </div>

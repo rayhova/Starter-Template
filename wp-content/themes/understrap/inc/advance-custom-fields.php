@@ -21,6 +21,11 @@
 			'capability'    => 'edit_site_options',
 		));
 		acf_add_options_page(array(
+			'page_title'    => 'Footer Options',
+			'menu_title'    => 'Footer Options',
+			'capability'    => 'edit_site_options',
+		));
+		acf_add_options_page(array(
 			'page_title'    => '404 Page',
 			'menu_title'    => '404 Page',
 			'capability'    => 'edit_site_options',
